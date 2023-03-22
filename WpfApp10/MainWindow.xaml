@@ -1,0 +1,64 @@
+﻿<Window x:Class="WpfApp10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas Margin="-6,-6,6,-50">
+            <Canvas Height="414" Width="335" Background="#FFE2B0B0" Canvas.Left="10" Canvas.Top="10">
+                <Label Content="Art Name" Canvas.Left="9" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-6"/>
+                <TextBox x:Name="textboxartname" Canvas.Left="9" TextWrapping="Wrap" Canvas.Top="20" Width="131" Height="23" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <DatePicker x:Name="timepicker" Canvas.Left="12" Canvas.Top="48" Height="34" Width="124" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="artistnametextbox" Canvas.Left="9" TextWrapping="Wrap" Canvas.Top="106" Width="150" Height="22" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <RichTextBox x:Name="richtextbox" Height="91" Width="244" Canvas.Left="9" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run x:Name="advincerichtext" Text=""/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                <Canvas Height="101" Width="181" Canvas.Left="75" Canvas.Top="271" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.341"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas Height="99" Width="241" Background="#FF7B6868" Canvas.Left="12" Canvas.Top="248" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <RadioButton x:Name="radio1" Content="Epressionism" Canvas.Left="59" Height="15" Width="90" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <RadioButton x:Name="radio2" Content="Surrealism" Canvas.Left="61" Canvas.Top="20" Height="33" Width="99" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="radio3" Content="Impressionism" Canvas.Left="61" Canvas.Top="42" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="radio4" Content="Neoclassicism" Canvas.Left="62" Canvas.Top="62" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <ListView x:Name="listview" Height="431" Width="235" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="325" Canvas.Top="-267" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="listview_SelectionChanged" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="year" DisplayMemberBinding="{Binding Date}"/>
+                                <GridViewColumn Header=" Artist" DisplayMemberBinding="{Binding  Artist}"/>
+                                <GridViewColumn Header="Art" DisplayMemberBinding="{Binding Art}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Canvas>
+                <Button x:Name="pickimagebt" Content="pick image" Canvas.Left="12" Canvas.Top="352" Height="30" Width="76" Click="pickimagebt_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="imtextbox" Canvas.Left="103" TextWrapping="Wrap" Canvas.Top="352" Width="150" Height="23" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button x:Name="submitbt" Content="submit Art" Canvas.Left="12" Canvas.Top="387" Height="23" Width="241" Click="submitbt_Click" RenderTransformOrigin="-0.469,0.282" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Artist" Canvas.Left="9" Canvas.Top="82" HorizontalAlignment="Center" VerticalAlignment="Top" Width="97" FontWeight="Bold"/>
+                <Label Content="Art Information" Canvas.Left="9" Canvas.Top="128" HorizontalAlignment="Center" VerticalAlignment="Top" Width="185" Height="30"/>
+            </Canvas>
+
+            <Image x:Name="imageshow" Height="229" Canvas.Left="593" Canvas.Top="20" Width="193"/>
+            <RichTextBox x:Name="advincerichtextbox" Height="179" Width="211" Canvas.Left="589" Canvas.Top="255" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+
+            </RichTextBox>
+        </Canvas>
+
+    </Grid>
+</Window>
